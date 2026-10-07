@@ -62,6 +62,8 @@
   - [Multiple Windows](#multiple-windows)
   - [Background / Detach](#background--detach)
   - [Built-in Help](#built-in-help)
+- [Optional Server Bootstrap](#optional-server-bootstrap)
+- [Telegram Notifications](#telegram-notifications)
 - [Supported Systems](#supported-systems)
 - [Health Check](#health-check)
 - [Example Workflow](#example-workflow)
@@ -532,6 +534,130 @@ Outside AON, normal shell help remains unchanged.
 
 ---
 
+## Optional Server Bootstrap
+
+AON can also help prepare a new server, but **all extra tools are optional**.
+
+After the core AON installation finishes, the installer asks whether you want to open the optional setup wizard.
+
+You can choose one of four profiles:
+
+| Profile | Includes |
+|---|---|
+| **Minimal** | AON only |
+| **AI Builder** | Common CLI tools, GitHub CLI, Node.js, Python, Claude Code, OpenAI Codex, Kimi Code CLI, optional Telegram |
+| **Server Developer** | AI Builder + NGINX, PM2, UFW, Fail2ban, optional Docker |
+| **Custom** | Select individual components |
+
+The custom menu supports:
+
+```text
+1  Common CLI tools       8  Telegram notifications
+2  GitHub CLI             9  NGINX
+3  Node.js + npm         10  PM2
+4  Python + pip          11  UFW
+5  Claude Code           12  Fail2ban
+6  OpenAI Codex          13  Docker Engine
+7  Kimi Code CLI
+```
+
+The AI CLIs use their current official native installers:
+
+- Claude Code: `https://claude.ai/install.sh`
+- OpenAI Codex: `https://chatgpt.com/codex/install.sh`
+- Kimi Code CLI: `https://code.kimi.com/kimi-code/install.sh`
+
+Nothing in this section is required for AON itself.
+
+You can run the optional wizard again later:
+
+```bash
+bash scripts/bootstrap.sh
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## Telegram Notifications
+
+AON includes an optional generic Telegram bridge for terminal tasks and AI CLIs.
+
+Install it from the optional setup wizard, then configure it:
+
+```bash
+aon-notify setup
+```
+
+You will be asked for:
+
+- Telegram Bot Token
+- Telegram Chat ID
+
+The credentials are stored locally at:
+
+```text
+~/.config/aon/telegram.env
+```
+
+with restrictive file permissions.
+
+### Send a manual notification
+
+```bash
+aon-notify send "Deployment finished"
+```
+
+### Run a command and notify when it exits
+
+Claude Code:
+
+```bash
+aon-notify run claude
+```
+
+OpenAI Codex:
+
+```bash
+aon-notify run codex
+```
+
+Kimi Code CLI:
+
+```bash
+aon-notify run kimi
+```
+
+Build command:
+
+```bash
+aon-notify run npm run build
+```
+
+A notification includes:
+
+- host name
+- AON/tmux session name when available
+- command
+- exit code
+- duration
+- completed or failed status
+
+> For interactive AI tools, the notification is sent when the CLI process exits. For one-shot commands, it is sent as soon as that command finishes.
+
+Other commands:
+
+```bash
+aon-notify test
+aon-notify status
+aon-notify disable
+aon-notify help
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
 ## Supported Systems
 
 ### Direct Host Support
@@ -624,6 +750,9 @@ aon attach root-ai
 
 ```text
 AON/
+├── scripts/
+│   ├── aon-notify.sh
+│   └── bootstrap.sh
 ├── install.sh
 └── README.md
 ```
@@ -684,6 +813,8 @@ Remove AON-managed sections from `~/.tmux.conf`, `~/.bashrc`, and `~/.zshrc`.
 - [x] Linux support
 - [x] macOS support
 - [x] WSL workflow
+- [x] Optional AI/server bootstrap
+- [x] Telegram completion notifications
 - [ ] Automated release packaging
 - [ ] Installer test matrix in CI
 - [ ] Optional theme presets
