@@ -40,7 +40,7 @@
 
 ---
 
-## ⚡ AON in 20 seconds
+## ⚡ ${\\color{green}AON\\ in\\ 20\\ seconds}$
 
 AON is a simple wrapper around `tmux`.
 
@@ -60,7 +60,7 @@ It lets you:
 
 ---
 
-## 🚀 Quick Start
+## 🚀 ${\\color{lightblue}Quick\\ Start}$
 
 ### 1. Install
 
@@ -110,7 +110,7 @@ aon attach project
 
 ---
 
-## ⌨️ Shortcuts
+## ⌨️ ${\\color{yellow}Shortcuts}$
 
 **Legend:** 🟢 Core · 🔵 Navigation · 🟡 Layout · 🔴 Close
 
@@ -141,7 +141,7 @@ aon attach project
 
 ---
 
-## 🧩 Core Commands
+## 🧩 ${\\color{green}Core\\ Commands}$
 
 | Command | Purpose |
 |---|---|
@@ -164,7 +164,7 @@ aon attach <TAB>
 
 ---
 
-## 🆘 Built-in Help
+## 🆘 ${\\color{lightblue}Built-in\\ Help}$
 
 Inside an AON session:
 
@@ -187,7 +187,7 @@ Outside AON, your normal shell help stays unchanged.
 
 ---
 
-## 🧰 Optional Tools
+## 🧰 ${\\color{orange}Optional\\ Tools}$
 
 > [!NOTE]
 > AON core installs first. Everything in this section is optional.
@@ -227,7 +227,7 @@ bash scripts/bootstrap.sh
 
 ---
 
-## 📬 Telegram
+## 📬 ${\\color{lightblue}Telegram}$
 
 > [!TIP]
 > Telegram notifications are optional and can wrap any command, not only AI tools.
@@ -274,7 +274,7 @@ Telegram config is stored locally in:
 
 ---
 
-## 🖥️ Supported Systems
+## 🖥️ ${\\color{yellow}Supported\\ Systems}$
 
 ### AON host
 
@@ -319,7 +319,7 @@ Fn + F12
 
 ---
 
-## 🪟 Example Layout
+## 🪟 ${\\color{green}Example\\ Layout}$
 
 Split left / right with `F9`:
 
@@ -408,7 +408,7 @@ AON sessions run with the permissions of the user who starts them.
 
 ---
 
-## 👤 Author
+## 👤 ${\\color{lightblue}Author}$
 
 Created by **pfix0**
 
