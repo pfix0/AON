@@ -300,6 +300,8 @@ Shift + Arrow
 
 Mouse:
   Click a pane to focus it.
+  Drag to select text.
+  Releasing the mouse copies the selection automatically.
   Click a window in the bottom status bar to switch to it.
   Double-click remains available for normal terminal text selection.
 
@@ -342,6 +344,7 @@ Keyboard:
 
 Mouse:
   Click a pane to focus it.
+  Drag to select text and release to copy automatically.
   Click a window in the bottom bar to switch to it.
 
 More:
@@ -547,6 +550,7 @@ set -g renumber-windows on
 set -g exit-empty off
 set -g focus-events on
 set -g set-clipboard on
+set -as terminal-features ',xterm*:clipboard'
 
 # AON shortcuts
 bind-key -n F4 resize-pane -Z
