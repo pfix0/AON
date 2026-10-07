@@ -8,7 +8,14 @@ TARGET_HOME="$HOME"
 HOST_OS="$(uname -s)"
 
 if [ -t 1 ]; then
-  RESET=
+  RESET="$(printf '\033[0m')"
+  BOLD="$(printf '\033[1m')"
+  DIM="$(printf '\033[2m')"
+  GREEN="$(printf '\033[32m')"
+  YELLOW="$(printf '\033[33m')"
+  CYAN="$(printf '\033[36m')"
+  MAGENTA="$(printf '\033[35m')"
+  RED="$(printf '\033[31m')"
 else
   RESET=''; BOLD=''; DIM=''; GREEN=''; YELLOW=''; CYAN=''; MAGENTA=''; RED=''
 fi
