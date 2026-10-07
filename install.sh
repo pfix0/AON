@@ -5,12 +5,12 @@ AON_VERSION="1.0.0"
 AON_AUTHOR="pfix0"
 AON_BIN="/usr/local/bin/aon"
 
-GREEN='\033[32m'
-CYAN='\033[36m'
-YELLOW='\033[33m'
-RED='\033[31m'
-BOLD='\033[1m'
-RESET='\033[0m'
+GREEN="$(printf '\033[32m')"
+CYAN="$(printf '\033[36m')"
+YELLOW="$(printf '\033[33m')"
+RED="$(printf '\033[31m')"
+BOLD="$(printf '\033[1m')"
+RESET="$(printf '\033[0m')"
 
 info() { printf "${CYAN}%s${RESET}\n" "$*"; }
 ok()   { printf "${GREEN}%s${RESET}\n" "$*"; }
