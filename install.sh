@@ -277,7 +277,7 @@ AON Keyboard
 ============
 
 F4    Zoom / unzoom current pane
-Alt+Z Universal zoom / unzoom fallback
+Alt+Z (macOS: Option ⌥ + Z) Universal zoom / unzoom fallback
 F5    New window
 F6    Background / Detach
 F7    Previous window
@@ -288,9 +288,11 @@ F11   Close current pane
 F12   Close current window
 
 Alt + 1..9
+macOS: Option ⌥ + 1..9
       Jump directly to a window
 
 Alt + Arrow
+macOS: Option ⌥ + Arrow
       Move between panes
 
 Shift + Arrow
@@ -328,7 +330,7 @@ Sessions:
 
 Keyboard:
   F4    Zoom / unzoom
-  Alt+Z Universal zoom / unzoom fallback
+  Alt+Z (macOS: Option ⌥ + Z) Universal zoom / unzoom fallback
   F5    New window
   F6    Background / Detach
   F7    Previous window
@@ -390,6 +392,14 @@ Many MacBooks use:
 
 If standard function keys are enabled:
   F4 ... F12
+
+For AON shortcuts that say Alt, use:
+  Option ⌥
+
+Examples:
+  Alt + Z      = Option ⌥ + Z
+  Alt + 1..9   = Option ⌥ + 1..9
+  Alt + Arrow  = Option ⌥ + Arrow
 
 MAC
 }
@@ -467,8 +477,13 @@ Inside AON:
 Outside AON, normal shell help remains unchanged.
 
 If F4 is intercepted by your local operating system or terminal:
-  Alt+Z
-      Zoom / unzoom current pane directly.
+  Windows/Linux:
+    Alt + Z
+
+  macOS:
+    Option ⌥ + Z
+
+  Zoom / unzoom current pane directly.
 
 Standard tmux fallback:
   Ctrl+b then z
@@ -535,6 +550,7 @@ set -g set-clipboard on
 
 # AON shortcuts
 bind-key -n F4 resize-pane -Z
+# Universal fallback: Alt+Z on Linux/Windows, Option+Z on macOS
 bind-key -n M-z resize-pane -Z
 bind-key -n F5 new-window -c "#{pane_current_path}"
 bind-key -n F6 detach-client
@@ -546,6 +562,8 @@ bind-key -n F11 confirm-before -p "Close pane? (y/n)" kill-pane
 bind-key -n F12 confirm-before -p "Close window? (y/n)" kill-window
 
 # Direct window access
+# Linux/Windows: Alt + 1..9
+# macOS: Option + 1..9
 bind-key -n M-1 select-window -t 1
 bind-key -n M-2 select-window -t 2
 bind-key -n M-3 select-window -t 3
@@ -557,6 +575,8 @@ bind-key -n M-8 select-window -t 8
 bind-key -n M-9 select-window -t 9
 
 # Pane navigation
+# Linux/Windows: Alt + Arrow
+# macOS: Option + Arrow
 bind-key -n M-Left  select-pane -L
 bind-key -n M-Right select-pane -R
 bind-key -n M-Up    select-pane -U
@@ -868,7 +888,7 @@ Inside AON:
 
 Keyboard:
   F4   Zoom / unzoom current pane
-  Alt+Z Universal zoom / unzoom fallback
+  Alt+Z (macOS: Option ⌥ + Z) Universal zoom / unzoom fallback
   F5   New window
   F6   Background / Detach
   F7   Previous window
