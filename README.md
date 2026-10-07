@@ -143,8 +143,29 @@ aon attach project
 
 - click a pane to focus it
 - click a window in the bottom bar to switch to it
-- normal text selection remains available
-- double-click is not used for zoom
+- drag across text to select it
+- release the mouse to copy the selection automatically
+- double-click remains available for normal word selection
+
+> [!TIP]
+> AON uses tmux clipboard forwarding. On terminals that support OSC52, the copied text is sent to your **local computer clipboard**, including over SSH. If a terminal blocks OSC52, the text is still copied to the tmux buffer.
+
+---
+
+## 📋 Copy with the Mouse
+
+AON is configured for Windows-style mouse copying inside tmux:
+
+1. Drag across text.
+2. Release the mouse.
+3. The selection is copied automatically.
+
+No extra copy key is required.
+
+For remote SSH sessions, AON uses tmux clipboard forwarding. Your terminal must allow **OSC52 clipboard access** for the selection to reach the local macOS, Windows, or Linux clipboard.
+
+> [!IMPORTANT]
+> Clipboard forwarding is controlled by the terminal application on your computer. A remote server cannot force a terminal that blocks OSC52 to write to your local clipboard.
 
 ---
 
