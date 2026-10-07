@@ -54,6 +54,7 @@ It lets you:
 - switch windows and panes with keyboard or mouse
 - install optional AI and server tools
 - send completion notifications to Telegram
+- use iTerm2 on macOS for the best clipboard and mouse experience
 
 > [!TIP]
 > Start work once, detach with `F6`, and return later without stopping the session.
@@ -148,7 +149,7 @@ aon attach project
 - double-click remains available for normal word selection
 
 > [!TIP]
-> AON uses tmux clipboard forwarding. On terminals that support OSC52, the copied text is sent to your **local computer clipboard**, including over SSH. If a terminal blocks OSC52, the text is still copied to the tmux buffer.
+> On macOS, **iTerm2 is recommended**. Enable **Copy to clipboard on selection** and **Applications in terminal may access clipboard** for the smoothest AON copy experience over SSH.
 
 ---
 
@@ -302,6 +303,63 @@ Telegram config is stored locally in:
 
 ---
 
+## 🍎 macOS Terminal Recommendation
+
+For macOS, **iTerm2 is the primary recommended terminal for AON**.
+
+It gives the best experience for:
+
+- mouse text selection
+- automatic copy on selection
+- OSC52 clipboard forwarding over SSH
+- tmux mouse support
+- Option ⌥ shortcuts
+- split-pane workflows
+
+### Recommended iTerm2 settings
+
+Open:
+
+```text
+iTerm2 → Settings → General → Selection
+```
+
+Enable:
+
+```text
+Copy to clipboard on selection
+Applications in terminal may access clipboard
+```
+
+With these options enabled, selecting text inside AON can copy it directly to the macOS clipboard, including while connected to a remote server over SSH.
+
+> [!IMPORTANT]
+> **iTerm2 is the recommended macOS terminal for AON.**
+> Apple Terminal.app can still run AON, but clipboard forwarding and copy-on-selection behavior may be more limited depending on terminal settings.
+
+### macOS key mapping
+
+On macOS:
+
+```text
+Alt = Option ⌥
+```
+
+Examples:
+
+```text
+Windows / Linux: Alt + Z
+macOS:           Option ⌥ + Z
+
+Windows / Linux: Alt + 1..9
+macOS:           Option ⌥ + 1..9
+
+Windows / Linux: Alt + Arrow
+macOS:           Option ⌥ + Arrow
+```
+
+---
+
 ## 🖥️ ${\\color{yellow}Supported\\ Systems}$
 
 ### AON host
@@ -317,7 +375,7 @@ Telegram config is stored locally in:
 - AlmaLinux
 - Arch-based Linux
 - openSUSE / SUSE
-- macOS with Homebrew
+- macOS with Homebrew — **iTerm2 recommended**
 - Windows through WSL / WSL2
 
 ### SSH client
