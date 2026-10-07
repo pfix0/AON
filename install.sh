@@ -144,18 +144,18 @@ die() {
 }
 
 session_exists() {
-  tmux has-session -t "=$1" 2>/dev/null
+  tmux has-session -t "$1" 2>/dev/null
 }
 
 mark_session() {
-  tmux set-option -t "=$1" @aon_session 1 >/dev/null
+  tmux set-option -t "$1" @aon_session 1 >/dev/null
 }
 
 create_session() {
   local name="$1"
   tmux new-session -d -s "$name"
   mark_session "$name"
-  exec tmux attach-session -t "=$name"
+  exec tmux attach-session -t "$name"
 }
 
 list_sessions() {
@@ -185,7 +185,7 @@ attach_session() {
   [ -n "$name" ] || die "Usage: aon attach <name>"
   session_exists "$name" || die "Session '$name' does not exist."
   mark_session "$name"
-  exec tmux attach-session -t "=$name"
+  exec tmux attach-session -t "$name"
 }
 
 open_session() {
@@ -193,7 +193,7 @@ open_session() {
   [ -n "$name" ] || die "Usage: aon open <name>"
   if session_exists "$name"; then
     mark_session "$name"
-    exec tmux attach-session -t "=$name"
+    exec tmux attach-session -t "$name"
   else
     create_session "$name"
   fi
@@ -203,7 +203,7 @@ kill_session() {
   local name="${1:-}"
   [ -n "$name" ] || die "Usage: aon kill <name>"
   session_exists "$name" || die "Session '$name' does not exist."
-  tmux kill-session -t "=$name"
+  tmux kill-session -t "$name"
   echo "Stopped session: $name"
 }
 
@@ -213,7 +213,7 @@ rename_session() {
   [ -n "$old" ] && [ -n "$new" ] || die "Usage: aon rename <old> <new>"
   session_exists "$old" || die "Session '$old' does not exist."
   session_exists "$new" && die "Session '$new' already exists."
-  tmux rename-session -t "=$old" "$new"
+  tmux rename-session -t "$old" "$new"
   mark_session "$new"
   echo "Renamed: $old -> $new"
 }
