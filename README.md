@@ -2,9 +2,7 @@
 
 <div align="center">
 
-  <a href="https://imgur.com/a/yNfmgFJ">
-    <img src="https://imgur.com/a/yNfmgFJ" alt="AON Assistant" width="430">
-  </a>
+  <img src="assets/aon-assistant.jpg" alt="AON Assistant" width="430">
 
   <h1>AON</h1>
 
