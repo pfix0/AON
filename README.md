@@ -6,7 +6,11 @@
 
   <h1>AON</h1>
 
-  <p><strong>Persistent terminal sessions made simple.</strong></p>
+  <p>
+    <strong>
+      <span style="color:#00c853;">Persistent terminal sessions made simple.</span>
+    </strong>
+  </p>
 
 </div>
 
@@ -39,11 +43,22 @@
     <a href="#supported-systems">Supported Systems</a>
   </p>
 
+  <p>
+    <span style="color:#00c853;"><strong>Session Manager</strong></span>
+    &nbsp;•&nbsp;
+    <span style="color:#00acc1;"><strong>AI Builder Ready</strong></span>
+    &nbsp;•&nbsp;
+    <span style="color:#7e57c2;"><strong>Server Bootstrap</strong></span>
+    &nbsp;•&nbsp;
+    <span style="color:#ffb300;"><strong>Telegram Notifications</strong></span>
+  </p>
+
 </div>
 
----
 
-## Table of Contents
+<hr>
+
+## <span style="color:#00c853;">Table of Contents</span>
 
 - [About AON](#about-aon)
   - [Built With](#built-with)
@@ -77,11 +92,15 @@
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
----
 
-## About AON
+<hr>
 
-**AON** is a lightweight command-line layer around `tmux` that makes persistent terminal work easier to create, manage, detach, restore, split, zoom, and navigate.
+## <span style="color:#00c853;">About AON</span>
+
+> **AON CORE**  
+> A lightweight command-line layer around `tmux` for persistent terminal sessions, fast navigation, split panes, zoom, mouse control, and resilient SSH workflows.
+
+AON makes terminal work easier to create, manage, detach, restore, split, zoom, and navigate.
 
 It is designed for long-running terminal workflows such as:
 
@@ -191,9 +210,10 @@ Your terminal process is no longer tied to the lifetime of the SSH connection.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Getting Started
+<hr>
+
+## <span style="color:#00acc1;">Getting Started</span>
 
 ### Prerequisites
 
@@ -257,9 +277,10 @@ The installer:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Usage
+<hr>
+
+## <span style="color:#00c853;">Usage</span>
 
 Create a session:
 
@@ -532,15 +553,18 @@ Outside AON, normal shell help remains unchanged.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Optional Server Bootstrap
+<hr>
+
+## <span style="color:#7e57c2;">Optional Server Bootstrap</span>
 
 AON can also help prepare a new server, but **all extra tools are optional**.
 
 After the core AON installation finishes, the installer asks whether you want to open the optional setup wizard.
 
 You can choose one of four profiles:
+
+> **Profiles are optional.** AON core works without any of them.
 
 | Profile | Includes |
 |---|---|
@@ -577,9 +601,10 @@ bash scripts/bootstrap.sh
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Telegram Notifications
+<hr>
+
+## <span style="color:#229ED9;">Telegram Notifications</span>
 
 AON includes an optional generic Telegram bridge for terminal tasks and AI CLIs.
 
@@ -656,9 +681,10 @@ aon-notify help
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Supported Systems
+<hr>
+
+## <span style="color:#ffb300;">Supported Systems</span>
 
 ### Direct Host Support
 
@@ -695,9 +721,10 @@ Windows and Linux laptops may also require `Fn`, depending on keyboard settings.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Health Check
+<hr>
+
+## <span style="color:#00c853;">Health Check</span>
 
 Run:
 
@@ -723,12 +750,13 @@ Author             pfix0
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Example Workflow
+<hr>
+
+## <span style="color:#00acc1;">Example Workflow</span>
 
 ```bash
-aon new root-ai
+aon new workspace-main
 claude
 ```
 
@@ -739,14 +767,15 @@ Reconnect later:
 ```bash
 ssh server
 aon list
-aon attach root-ai
+aon attach workspace-main
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Project Structure
+<hr>
+
+## <span style="color:#7e57c2;">Project Structure</span>
 
 ```text
 AON/
@@ -759,9 +788,10 @@ AON/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Security
+<hr>
+
+## <span style="color:#ef5350;">Security</span>
 
 AON does not open a network port, run a public API, provide remote authentication, replace SSH authentication, or require a cloud account.
 
@@ -771,9 +801,10 @@ Avoid placing secrets in session names, shell history, or command-line arguments
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Updating
+<hr>
+
+## <span style="color:#00c853;">Updating</span>
 
 ```bash
 git pull
@@ -784,9 +815,10 @@ Existing tmux sessions are not intentionally deleted by the installer.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Uninstalling
+<hr>
+
+## <span style="color:#ef5350;">Uninstalling</span>
 
 ```bash
 sudo rm -f /usr/local/bin/aon
@@ -797,9 +829,10 @@ Remove AON-managed sections from `~/.tmux.conf`, `~/.bashrc`, and `~/.zshrc`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Roadmap
+<hr>
+
+## <span style="color:#ffb300;">Roadmap</span>
 
 - [x] Persistent named sessions
 - [x] F-key workflow
@@ -822,9 +855,10 @@ Remove AON-managed sections from `~/.tmux.conf`, `~/.bashrc`, and `~/.zshrc`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Contributing
+<hr>
+
+## <span style="color:#00acc1;">Contributing</span>
 
 Contributions are welcome.
 
@@ -836,9 +870,10 @@ Contributions are welcome.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## License
+<hr>
+
+## <span style="color:#90a4ae;">License</span>
 
 No license file has been added yet.
 
@@ -846,9 +881,10 @@ Until a license is explicitly added to the repository, normal copyright restrict
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Author
+<hr>
+
+## <span style="color:#00c853;">Author</span>
 
 Created by **pfix0**.
 
@@ -856,9 +892,10 @@ Current version: **1.0.0**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
 
-## Acknowledgments
+<hr>
+
+## <span style="color:#7e57c2;">Acknowledgments</span>
 
 README structure and presentation were inspired by the open-source [Best-README-Template](https://github.com/othneildrew/Best-README-Template).
 
@@ -869,6 +906,6 @@ AON is built on top of the excellent [tmux](https://github.com/tmux/tmux) termin
 ---
 
 <div align="center">
-  <p><strong>AON — persistent terminal work without losing your session.</strong></p>
+  <p><strong><span style="color:#00c853;">AON</span> — persistent terminal work without losing your session.</strong></p>
   <p>Created by <strong>pfix0</strong></p>
 </div>
