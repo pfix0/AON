@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="https://github.com/user-attachments/assets/65c2292b-0720-4db4-a6be-f5f970b3770e" alt="AON Assistant" width="430">
+  <img src="https://imgur.com/a/yNfmgFJ" alt="AON Assistant" width="430">
 
   <h1>AON</h1>
 
