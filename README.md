@@ -114,10 +114,14 @@ aon attach project
 
 **Legend:** 🟢 Core · 🔵 Navigation · 🟡 Layout · 🔴 Close
 
+> [!NOTE]
+> macOS uses the **Option ⌥** key where Windows/Linux instructions say **Alt**.
+
 | Key | Action |
 |---|---|
 | `F4` | 🟡 Zoom / unzoom current pane |
 | `Alt + Z` | 🟡 Universal zoom / unzoom fallback |
+| `Option ⌥ + Z` | 🟡 macOS zoom / unzoom fallback |
 | `F5` | 🟢 New window |
 | `F6` | 🟢 Detach and keep everything running |
 | `F7` | 🔵 Previous window |
@@ -127,7 +131,9 @@ aon attach project
 | `F11` | 🔴 Close pane |
 | `F12` | 🔴 Close window |
 | `Alt + 1..9` | Jump to a window |
+| `Option ⌥ + 1..9` | macOS: jump to a window |
 | `Alt + Arrow` | Move between panes |
+| `Option ⌥ + Arrow` | macOS: move between panes |
 | `Shift + Arrow` | Resize pane |
 
 ### 🖱️ Mouse
@@ -308,6 +314,21 @@ You can connect from:
 > [!NOTE]
 > On laptops, the operating system may require the `Fn` key to send F-keys.
 
+On macOS, the key commonly called **Alt** on other systems is labeled **Option ⌥**.
+
+Examples:
+
+```text
+Windows / Linux: Alt + Z
+macOS:           Option ⌥ + Z
+
+Windows / Linux: Alt + 1..9
+macOS:           Option ⌥ + 1..9
+
+Windows / Linux: Alt + Arrow
+macOS:           Option ⌥ + Arrow
+```
+
 You may need:
 
 ```text
@@ -342,8 +363,16 @@ Some laptops or terminal applications intercept the F4 key before it reaches SSH
 
 Use the universal AON shortcut instead:
 
+**Windows / Linux**
+
 ```text
 Alt + Z
+```
+
+**macOS**
+
+```text
+Option ⌥ + Z
 ```
 
 Or use the standard tmux fallback:
