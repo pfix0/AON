@@ -2,372 +2,327 @@
 
 <div align="center">
 
-  <img src="assets/Aon logo.png" alt="AON Assistant" width="200">
-
-  <h1>AON</h1>
-
-  <p>
-    <strong>
-      <span style="color:#00c853;">Persistent terminal sessions made simple.</span>
-    </strong>
-  </p>
-
-</div>
-
+  <img src="assets/Aon logo.png" alt="AON" width="180">
 
   <h1>AON</h1>
 
   <p><strong>Persistent terminal sessions made simple.</strong></p>
 
   <p>
-    A lightweight terminal session assistant built on top of
-    <a href="https://github.com/tmux/tmux">tmux</a>.
-  </p>
-
-  <p>Created by <strong>pfix0</strong></p>
-
-  <p>
-    <img src="https://img.shields.io/badge/version-1.0.0-00ff00?style=for-the-badge" alt="Version">
-    <img src="https://img.shields.io/badge/backend-tmux-1bb91f?style=for-the-badge" alt="tmux">
-    <img src="https://img.shields.io/badge/shell-Bash%20%7C%20Zsh-111111?style=for-the-badge" alt="Shell">
-    <img src="https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20WSL-111111?style=for-the-badge" alt="Platform">
+    Keep AI tools, servers, scripts, builds, and SSH work running safely in the background.
   </p>
 
   <p>
-    <a href="#getting-started"><strong>Get Started</strong></a>
-    ·
-    <a href="#usage">Usage</a>
-    ·
-    <a href="#keyboard-shortcuts">Shortcuts</a>
-    ·
-    <a href="#supported-systems">Supported Systems</a>
+    <img src="https://img.shields.io/badge/version-1.0.0-00C853?style=flat-square" alt="Version">
+    <img src="https://img.shields.io/badge/tmux-powered-00ACC1?style=flat-square" alt="tmux">
+    <img src="https://img.shields.io/badge/Linux-supported-7E57C2?style=flat-square" alt="Linux">
+    <img src="https://img.shields.io/badge/macOS-supported-FFB300?style=flat-square" alt="macOS">
+    <img src="https://img.shields.io/badge/WSL-supported-EF5350?style=flat-square" alt="WSL">
   </p>
 
   <p>
-    <span style="color:#00c853;"><strong>Session Manager</strong></span>
-    &nbsp;•&nbsp;
-    <span style="color:#00acc1;"><strong>AI Builder Ready</strong></span>
-    &nbsp;•&nbsp;
-    <span style="color:#7e57c2;"><strong>Server Bootstrap</strong></span>
-    &nbsp;•&nbsp;
-    <span style="color:#ffb300;"><strong>Telegram Notifications</strong></span>
+    <a href="#quick-start"><strong>Quick Start</strong></a>
+    ·
+    <a href="#shortcuts"><strong>Shortcuts</strong></a>
+    ·
+    <a href="#optional-tools"><strong>Optional Tools</strong></a>
+    ·
+    <a href="#telegram"><strong>Telegram</strong></a>
   </p>
 
 </div>
 
+---
 
-<hr>
+## AON in 20 seconds
 
-## <span style="color:#00c853;">Table of Contents</span>
+AON is a simple wrapper around `tmux`.
 
-- [About AON](#about-aon)
-  - [Built With](#built-with)
-  - [Why AON](#why-aon)
-  - [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-  - [Commands](#commands)
-  - [TAB Completion](#tab-completion)
-  - [Keyboard Shortcuts](#keyboard-shortcuts)
-  - [Zoom](#zoom)
-  - [Mouse Navigation](#mouse-navigation)
-  - [Splitting the Terminal](#splitting-the-terminal)
-  - [Multiple Windows](#multiple-windows)
-  - [Background / Detach](#background--detach)
-  - [Built-in Help](#built-in-help)
-- [Optional Server Bootstrap](#optional-server-bootstrap)
-- [Telegram Notifications](#telegram-notifications)
-- [Supported Systems](#supported-systems)
-- [Health Check](#health-check)
-- [Example Workflow](#example-workflow)
-- [Project Structure](#project-structure)
-- [Security](#security)
-- [Updating](#updating)
-- [Uninstalling](#uninstalling)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+It lets you:
 
+- keep terminal work alive after SSH disconnects
+- detach with `F6` without stopping anything
+- return to the same session later
+- split the terminal into panes
+- zoom one pane to full-screen
+- switch windows and panes with keyboard or mouse
+- install optional AI and server tools
+- send completion notifications to Telegram
 
-<hr>
+> **Main idea:** start work once, leave it running, and come back later.
 
-## <span style="color:#00c853;">About AON</span>
+---
 
-> **AON CORE**  
-> A lightweight command-line layer around `tmux` for persistent terminal sessions, fast navigation, split panes, zoom, mouse control, and resilient SSH workflows.
+## Quick Start
 
-AON makes terminal work easier to create, manage, detach, restore, split, zoom, and navigate.
+### 1. Install
 
-It is designed for long-running terminal workflows such as:
+```bash
+git clone https://github.com/pfix0/AON.git
+cd AON
+chmod +x install.sh
+./install.sh
+```
 
-- Claude Code
-- Codex
-- Node.js development servers
-- Python applications
-- build jobs
-- workers
-- logs and monitoring
-- SSH administration
-- long-running scripts
-
-The core workflow is simple:
+### 2. Create a session
 
 ```bash
 aon new project
 ```
 
-Start your work:
+### 3. Run your work
 
 ```bash
 claude
 ```
 
-Detach without stopping it:
+or:
+
+```bash
+codex
+```
+
+or any normal terminal command.
+
+### 4. Leave it running
+
+Press:
 
 ```text
 F6
 ```
 
-Return later:
+### 5. Return later
 
 ```bash
 aon attach project
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+---
 
-### Built With
-
-AON keeps the stack intentionally small:
-
-- [tmux](https://github.com/tmux/tmux)
-- Bash
-- Zsh
-- OpenSSH
-- Byobu integration when available
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Why AON
-
-A normal remote terminal can disappear when:
-
-- SSH disconnects
-- your laptop sleeps
-- the terminal closes
-- Wi-Fi changes
-- VPN reconnects
-- the client machine restarts
-- you intentionally disconnect from the server
-
-AON keeps the actual work inside a persistent `tmux` session on the host.
-
-Your terminal process is no longer tied to the lifetime of the SSH connection.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Features
-
-#### Session Management
-
-- Named persistent sessions
-- Create, open, attach, rename, and stop sessions
-- Detach without stopping processes
-- List all sessions
-- Show the current session
-- Stop all sessions when required
-
-#### Terminal Workflow
-
-- Multiple windows
-- Horizontal and vertical splits
-- Full-screen pane zoom
-- Keyboard pane navigation
-- Mouse pane selection
-- Mouse window switching from the bottom status bar
-- Pane resizing
-- Large scrollback history
-- Mouse support enabled automatically
-
-#### Shell Integration
-
-- Bash support
-- Zsh support
-- TAB completion
-- Session-name completion
-- AON-specific `help` inside AON sessions
-- Normal shell help outside AON remains unchanged
-
-#### Diagnostics
-
-- Built-in `aon doctor`
-- tmux configuration validation
-- automatic dependency checks
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#00acc1;">Getting Started</span>
-
-### Prerequisites
-
-The installer handles dependencies automatically on supported systems.
-
-Core components include:
-
-- `tmux`
-- Bash
-- Zsh integration
-- OpenSSH client
-- Git
-- curl
-
-On macOS, Homebrew is required.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/pfix0/AON.git
-cd AON
-```
-
-Make the installer executable:
-
-```bash
-chmod +x install.sh
-```
-
-Run it:
-
-```bash
-./install.sh
-```
-
-On Linux you may also run:
-
-```bash
-sudo bash install.sh
-```
-
-The installer:
-
-1. Detects the operating system.
-2. Detects the target user.
-3. Installs required packages.
-4. Installs `/usr/local/bin/aon`.
-5. Configures `tmux`.
-6. Configures Byobu when available.
-7. Adds Bash completion.
-8. Adds Zsh completion.
-9. Adds AON-aware shell help behavior.
-10. Enables mouse support.
-11. Configures AON shortcuts.
-12. Validates the tmux configuration.
-13. Runs `aon doctor`.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#00c853;">Usage</span>
-
-Create a session:
-
-```bash
-aon new project
-```
-
-List sessions:
-
-```bash
-aon list
-```
-
-Detach without stopping work:
-
-```text
-F6
-```
-
-Return:
-
-```bash
-aon attach project
-```
-
-Open an existing session or create it automatically:
-
-```bash
-aon open project
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Commands
-
-| Command | Description |
-|---|---|
-| `aon list` | List running sessions |
-| `aon new <name>` | Create a new session |
-| `aon open <name>` | Open an existing session or create it |
-| `aon attach <name>` | Attach to an existing session |
-| `aon detach` | Detach and keep work running |
-| `aon bg` | Alias for detach |
-| `aon background` | Alias for detach |
-| `aon kill <name>` | Stop one session |
-| `aon rename <old> <new>` | Rename a session |
-| `aon current` | Show the current session |
-| `aon kill-all` | Stop all sessions |
-| `aon keys` | Show keyboard shortcuts |
-| `aon doctor` | Check the AON installation |
-| `aon version` | Show version and author |
-| `aon help` | Show quick help |
-| `aon help --` | Show full help |
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### TAB Completion
-
-AON can complete existing session names:
-
-```bash
-aon attach <TAB>
-aon open <TAB>
-aon kill <TAB>
-aon rename <TAB>
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Keyboard Shortcuts
+## Shortcuts
 
 | Key | Action |
 |---|---|
-| `F4` | Zoom / unzoom the current pane |
-| `F5` | Create a new window |
-| `F6` | Background / detach |
+| `F4` | Zoom / unzoom current pane |
+| `F5` | New window |
+| `F6` | Detach and keep everything running |
 | `F7` | Previous window |
 | `F8` | Next window |
 | `F9` | Split left / right |
 | `F10` | Split top / bottom |
-| `F11` | Close the current pane |
-| `F12` | Close the current window |
-| `Alt + 1..9` | Jump directly to a window |
+| `F11` | Close pane |
+| `F12` | Close window |
+| `Alt + 1..9` | Jump to a window |
 | `Alt + Arrow` | Move between panes |
-| `Shift + Arrow` | Resize the current pane |
+| `Shift + Arrow` | Resize pane |
 
-Standard tmux fallbacks remain available:
+### Mouse
+
+- click a pane to focus it
+- click a window in the bottom bar to switch to it
+- normal text selection remains available
+- double-click is not used for zoom
+
+---
+
+## Core Commands
+
+| Command | Purpose |
+|---|---|
+| `aon new <name>` | Create a session |
+| `aon open <name>` | Open or create a session |
+| `aon attach <name>` | Re-enter a session |
+| `aon list` | List sessions |
+| `aon kill <name>` | Stop one session |
+| `aon rename <old> <new>` | Rename a session |
+| `aon current` | Show current session |
+| `aon doctor` | Check AON installation |
+| `aon keys` | Show shortcuts |
+| `aon version` | Show version |
+
+TAB completion works with session names:
+
+```bash
+aon attach <TAB>
+```
+
+---
+
+## Built-in Help
+
+Inside an AON session:
+
+```bash
+help
+```
+
+More help:
+
+```bash
+help --
+help --keys
+help --commands
+help --mac
+help --windows
+help --linux
+```
+
+Outside AON, your normal shell help stays unchanged.
+
+---
+
+## Optional Tools
+
+AON core installs first.
+
+Everything below is optional.
+
+The installer can then show a second setup menu:
+
+| Profile | What it installs |
+|---|---|
+| **Minimal** | AON only |
+| **AI Builder** | CLI tools, GitHub CLI, Node.js, Python, Claude Code, Codex, Kimi |
+| **Server Developer** | AI Builder + NGINX, PM2, UFW, Fail2ban |
+| **Custom** | Pick tools individually |
+
+Optional components include:
+
+```text
+Common CLI tools
+GitHub CLI
+Node.js + npm
+Python + pip
+Claude Code
+OpenAI Codex
+Kimi Code CLI
+Telegram notifications
+NGINX
+PM2
+UFW
+Fail2ban
+Docker Engine
+```
+
+Run the optional setup again later:
+
+```bash
+bash scripts/bootstrap.sh
+```
+
+---
+
+## Telegram
+
+Telegram support is optional.
+
+Configure it:
+
+```bash
+aon-notify setup
+```
+
+Run any command and get notified when it exits:
+
+```bash
+aon-notify run codex
+```
+
+```bash
+aon-notify run claude
+```
+
+```bash
+aon-notify run npm run build
+```
+
+Manual message:
+
+```bash
+aon-notify send "Deployment finished"
+```
+
+Other commands:
+
+```bash
+aon-notify test
+aon-notify status
+aon-notify disable
+```
+
+Telegram config is stored locally in:
+
+```text
+~/.config/aon/telegram.env
+```
+
+---
+
+## Supported Systems
+
+### AON host
+
+- Ubuntu
+- Debian
+- Linux Mint
+- Pop!_OS
+- Fedora
+- RHEL
+- CentOS
+- Rocky Linux
+- AlmaLinux
+- Arch-based Linux
+- openSUSE / SUSE
+- macOS with Homebrew
+- Windows through WSL / WSL2
+
+### SSH client
+
+You can connect from:
+
+- macOS
+- Windows
+- Linux
+- ChromeOS
+- any normal SSH-capable terminal
+
+### Function keys
+
+On laptops, you may need:
+
+```text
+Fn + F4
+Fn + F5
+Fn + F6
+...
+Fn + F12
+```
+
+---
+
+## Example Layout
+
+Split left / right with `F9`:
+
+```text
+┌──────────────────────┬──────────────────────┐
+│                      │                      │
+│       Terminal       │       Terminal       │
+│                      │                      │
+└──────────────────────┴──────────────────────┘
+```
+
+Zoom the active side with `F4`.
+
+Press `F4` again to restore the split.
+
+---
+
+<details>
+<summary><strong>Advanced commands</strong></summary>
+
+### Standard tmux fallbacks
 
 | Shortcut | Action |
 |---|---|
@@ -379,403 +334,34 @@ Standard tmux fallbacks remain available:
 | `Ctrl+b`, then `"` | Split top / bottom |
 | `Ctrl+b`, then `x` | Close pane |
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Update
 
-### Zoom
+```bash
+git pull
+./install.sh
+```
 
-If the terminal is split into multiple panes, focus the pane you want and press:
+### Uninstall
+
+```bash
+sudo rm -f /usr/local/bin/aon
+rm -rf ~/.aon
+```
+
+Remove AON-managed sections from:
 
 ```text
-F4
+~/.tmux.conf
+~/.bashrc
+~/.zshrc
 ```
 
-The selected pane becomes full-screen.
+</details>
 
-Press `F4` again to restore the previous split layout.
+---
 
-This is useful when a Claude Code or Codex conversation needs the entire terminal temporarily.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Mouse Navigation
-
-Mouse support is enabled automatically.
-
-#### Focus a pane
-
-Click any pane.
-
-#### Switch between windows or conversations
-
-The bottom tmux status bar shows your windows.
-
-From any pane, click a window name or number in the bottom bar to switch directly to it.
-
-This works even while the screen is split.
-
-#### Text Selection
-
-AON intentionally does **not** use double-click for zoom.
-
-This preserves normal terminal double-click text selection behavior.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Splitting the Terminal
-
-#### Left / Right
-
-Press:
-
-```text
-F9
-```
-
-```text
-+----------------------+----------------------+
-|                      |                      |
-|      Terminal 1      |      Terminal 2      |
-|                      |                      |
-+----------------------+----------------------+
-```
-
-#### Top / Bottom
-
-Press:
-
-```text
-F10
-```
-
-```text
-+---------------------------------------------+
-|                  Terminal 1                 |
-+---------------------------------------------+
-|                  Terminal 2                 |
-+---------------------------------------------+
-```
-
-Move between panes with `Alt + Arrow` or click the pane with the mouse.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Multiple Windows
-
-Create a new window: `F5`
-
-Previous window: `F7`
-
-Next window: `F8`
-
-Direct access:
-
-```text
-Alt + 1
-Alt + 2
-Alt + 3
-...
-Alt + 9
-```
-
-You can also click the window in the bottom status bar.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Background / Detach
-
-`F6` is the main AON shortcut.
-
-It detaches the current client from the `tmux` session.
-
-It does **not** stop the processes inside that session.
-
-Examples that continue running:
-
-- Claude Code
-- Codex
-- Node.js
-- npm
-- pnpm
-- Python
-- API servers
-- development servers
-- workers
-- builds
-- monitoring tools
-- log viewers
-
-Example:
-
-```bash
-aon new api
-npm run dev
-```
-
-Press `F6`.
-
-Later:
-
-```bash
-aon attach api
-```
-
-The same session is restored.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Built-in Help
-
-Inside an AON session:
-
-```bash
-help
-```
-
-shows AON quick help.
-
-Full help:
-
-```bash
-help --
-```
-
-Other help pages:
-
-```bash
-help --keys
-help --commands
-help --mac
-help --windows
-help --linux
-```
-
-Outside AON, normal shell help remains unchanged.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#7e57c2;">Optional Server Bootstrap</span>
-
-AON can also help prepare a new server, but **all extra tools are optional**.
-
-After the core AON installation finishes, the installer asks whether you want to open the optional setup wizard.
-
-You can choose one of four profiles:
-
-> **Profiles are optional.** AON core works without any of them.
-
-| Profile | Includes |
-|---|---|
-| **Minimal** | AON only |
-| **AI Builder** | Common CLI tools, GitHub CLI, Node.js, Python, Claude Code, OpenAI Codex, Kimi Code CLI, optional Telegram |
-| **Server Developer** | AI Builder + NGINX, PM2, UFW, Fail2ban, optional Docker |
-| **Custom** | Select individual components |
-
-The custom menu supports:
-
-```text
-1  Common CLI tools       8  Telegram notifications
-2  GitHub CLI             9  NGINX
-3  Node.js + npm         10  PM2
-4  Python + pip          11  UFW
-5  Claude Code           12  Fail2ban
-6  OpenAI Codex          13  Docker Engine
-7  Kimi Code CLI
-```
-
-The AI CLIs use their current official native installers:
-
-- Claude Code: `https://claude.ai/install.sh`
-- OpenAI Codex: `https://chatgpt.com/codex/install.sh`
-- Kimi Code CLI: `https://code.kimi.com/kimi-code/install.sh`
-
-Nothing in this section is required for AON itself.
-
-You can run the optional wizard again later:
-
-```bash
-bash scripts/bootstrap.sh
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#229ED9;">Telegram Notifications</span>
-
-AON includes an optional generic Telegram bridge for terminal tasks and AI CLIs.
-
-Install it from the optional setup wizard, then configure it:
-
-```bash
-aon-notify setup
-```
-
-You will be asked for:
-
-- Telegram Bot Token
-- Telegram Chat ID
-
-The credentials are stored locally at:
-
-```text
-~/.config/aon/telegram.env
-```
-
-with restrictive file permissions.
-
-### Send a manual notification
-
-```bash
-aon-notify send "Deployment finished"
-```
-
-### Run a command and notify when it exits
-
-Claude Code:
-
-```bash
-aon-notify run claude
-```
-
-OpenAI Codex:
-
-```bash
-aon-notify run codex
-```
-
-Kimi Code CLI:
-
-```bash
-aon-notify run kimi
-```
-
-Build command:
-
-```bash
-aon-notify run npm run build
-```
-
-A notification includes:
-
-- host name
-- AON/tmux session name when available
-- command
-- exit code
-- duration
-- completed or failed status
-
-> For interactive AI tools, the notification is sent when the CLI process exits. For one-shot commands, it is sent as soon as that command finishes.
-
-Other commands:
-
-```bash
-aon-notify test
-aon-notify status
-aon-notify disable
-aon-notify help
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#ffb300;">Supported Systems</span>
-
-### Direct Host Support
-
-The installer supports:
-
-- Ubuntu
-- Debian
-- Linux Mint
-- Pop!_OS
-- Fedora
-- RHEL
-- CentOS
-- Rocky Linux
-- AlmaLinux
-- Arch-based distributions using `pacman`
-- openSUSE / SUSE systems using `zypper`
-- macOS with Homebrew
-
-### Windows
-
-Native PowerShell and CMD are not the target AON runtime because AON depends on `tmux`.
-
-Use WSL, WSL2, or a remote Linux host over SSH.
-
-### SSH Client Support
-
-You can access an AON host from macOS, Windows, Linux, ChromeOS, and other SSH-capable systems.
-
-### Function Keys
-
-On many MacBooks, use `Fn + F4` through `Fn + F12` unless standard function keys are enabled.
-
-Windows and Linux laptops may also require `Fn`, depending on keyboard settings.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#00c853;">Health Check</span>
-
-Run:
-
-```bash
-aon doctor
-```
-
-Example:
-
-```text
-AON Doctor
-==========
-tmux               OK
-bash               OK
-zsh                OK
-git                OK
-curl               OK
-ssh                OK
-tmux config        OK
-AON version        1.0.0
-Author             pfix0
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#00acc1;">Example Workflow</span>
-
-```bash
-aon new workspace-main
-claude
-```
-
-Create another window with `F5`, split with `F9`, zoom with `F4`, and detach everything with `F6`.
-
-Reconnect later:
-
-```bash
-ssh server
-aon list
-aon attach workspace-main
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#7e57c2;">Project Structure</span>
+<details>
+<summary><strong>Project structure</strong></summary>
 
 ```text
 AON/
@@ -786,126 +372,35 @@ AON/
 └── README.md
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#ef5350;">Security</span>
-
-AON does not open a network port, run a public API, provide remote authentication, replace SSH authentication, or require a cloud account.
-
-AON sessions run with the privileges of the user who starts them.
-
-Avoid placing secrets in session names, shell history, or command-line arguments.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#00c853;">Updating</span>
-
-```bash
-git pull
-./install.sh
-```
-
-Existing tmux sessions are not intentionally deleted by the installer.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#ef5350;">Uninstalling</span>
-
-```bash
-sudo rm -f /usr/local/bin/aon
-rm -rf ~/.aon
-```
-
-Remove AON-managed sections from `~/.tmux.conf`, `~/.bashrc`, and `~/.zshrc`.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#ffb300;">Roadmap</span>
-
-- [x] Persistent named sessions
-- [x] F-key workflow
-- [x] Pane splitting
-- [x] Pane zoom
-- [x] Mouse pane navigation
-- [x] Mouse status-bar window switching
-- [x] Bash completion
-- [x] Zsh completion
-- [x] Built-in doctor command
-- [x] Linux support
-- [x] macOS support
-- [x] WSL workflow
-- [x] Optional AI/server bootstrap
-- [x] Telegram completion notifications
-- [ ] Automated release packaging
-- [ ] Installer test matrix in CI
-- [ ] Optional theme presets
-- [ ] Additional terminal compatibility testing
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#00acc1;">Contributing</span>
-
-Contributions are welcome.
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Push the branch.
-5. Open a Pull Request.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#90a4ae;">License</span>
-
-No license file has been added yet.
-
-Until a license is explicitly added to the repository, normal copyright restrictions apply.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#00c853;">Author</span>
-
-Created by **pfix0**.
-
-Current version: **1.0.0**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<hr>
-
-## <span style="color:#7e57c2;">Acknowledgments</span>
-
-README structure and presentation were inspired by the open-source [Best-README-Template](https://github.com/othneildrew/Best-README-Template).
-
-AON is built on top of the excellent [tmux](https://github.com/tmux/tmux) terminal multiplexer.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+</details>
 
 ---
 
+<details>
+<summary><strong>Security notes</strong></summary>
+
+AON does not open a network port or replace SSH authentication.
+
+AON sessions run with the permissions of the user who starts them.
+
+Avoid putting secrets in:
+
+- session names
+- shell history
+- command-line arguments
+
+</details>
+
+---
+
+## Author
+
+Created by **pfix0**
+
+Version **1.0.0**
+
+Built on [tmux](https://github.com/tmux/tmux).
+
 <div align="center">
-  <p><strong><span style="color:#00c853;">AON</span> — persistent terminal work without losing your session.</strong></p>
-  <p>Created by <strong>pfix0</strong></p>
+  <strong>AON — leave the terminal, not the work.</strong>
 </div>
