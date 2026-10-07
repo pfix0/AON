@@ -787,6 +787,49 @@ info "[11/11] Final verification..."
 "$AON_BIN" version
 "$AON_BIN" doctor || true
 
+# --------------------------------------------------
+# AON OPTIONAL SETUP LAUNCHER
+# --------------------------------------------------
+
+if [ -t 0 ]; then
+  echo
+  printf "\033[1;36mOptional Server Setup\033[0m\n"
+  printf "\033[2mAON core is installed. Everything below is optional.\033[0m\n"
+  echo
+  echo "Optional tools can include:"
+  echo "  - Common CLI utilities"
+  echo "  - GitHub CLI"
+  echo "  - Node.js + npm"
+  echo "  - Python + pip"
+  echo "  - Claude Code"
+  echo "  - OpenAI Codex"
+  echo "  - Kimi Code CLI"
+  echo "  - Telegram completion notifications"
+  echo "  - NGINX / PM2 / UFW / Fail2ban / Docker"
+  echo
+
+  read -r -p "Run optional server setup now? [y/N]: " AON_OPTIONAL_SETUP
+
+  if [[ "$AON_OPTIONAL_SETUP" =~ ^[Yy]$ ]]; then
+    SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" 2>/dev/null && pwd || true)"
+
+    if [ -n "$SCRIPT_DIR" ] && [ -f "$SCRIPT_DIR/scripts/bootstrap.sh" ]; then
+      bash "$SCRIPT_DIR/scripts/bootstrap.sh"
+    else
+      TMP_BOOTSTRAP="$(mktemp)"
+      curl -fsSL https://raw.githubusercontent.com/pfix0/AON/main/scripts/bootstrap.sh -o "$TMP_BOOTSTRAP"
+      bash "$TMP_BOOTSTRAP"
+      rm -f "$TMP_BOOTSTRAP"
+    fi
+  else
+    echo
+    echo "Optional tools skipped."
+    echo "Run later from the AON repository:"
+    echo "  bash scripts/bootstrap.sh"
+    echo
+  fi
+fi
+
 cat <<EOF
 
 ${GREEN}${BOLD}AON installed successfully.${RESET}
