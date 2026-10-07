@@ -2,7 +2,9 @@
 
 <div align="center">
 
-  <img src="assets/aon-assistant.jpg" alt="AON Assistant" width="430">
+  <a href="https://imgur.com/a/yNfmgFJ">
+    <img src="https://imgur.com/a/yNfmgFJ" alt="AON Assistant" width="430">
+  </a>
 
   <h1>AON</h1>
 
@@ -617,8 +619,6 @@ aon attach root-ai
 
 ```text
 AON/
-├── assets/
-│   └── aon-assistant.jpg
 ├── install.sh
 └── README.md
 ```
@@ -733,7 +733,6 @@ AON is built on top of the excellent [tmux](https://github.com/tmux/tmux) termin
 ---
 
 <div align="center">
-  <img src="assets/aon-assistant.jpg" alt="AON Assistant" width="180">
   <p><strong>AON — persistent terminal work without losing your session.</strong></p>
   <p>Created by <strong>pfix0</strong></p>
 </div>
