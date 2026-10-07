@@ -2,7 +2,14 @@
 
 <div align="center">
 
-  <img src="assets/aon-assistant.jpg" alt="AON Assistant" width="430">
+  <img src="https://github.com/user-attachments/assets/65c2292b-0720-4db4-a6be-f5f970b3770e" alt="AON Assistant" width="430">
+
+  <h1>AON</h1>
+
+  <p><strong>Persistent terminal sessions made simple.</strong></p>
+
+</div>
+
 
   <h1>AON</h1>
 
