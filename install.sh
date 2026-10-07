@@ -590,6 +590,15 @@ bind-key -n M-Down  select-pane -D
 bind-key -n MouseDown1Pane select-pane -t= \; send-keys -M
 bind-key -n MouseDown1Status select-window -t=
 
+# Mouse selection -> automatic copy
+# Drag to select text; releasing the mouse copies the selection.
+# With OSC52-capable terminals, tmux forwards the copied text to the local clipboard.
+set -g set-clipboard on
+set -as terminal-features ',xterm*:clipboard'
+set -as terminal-features ',tmux*:clipboard'
+bind-key -T copy-mode MouseDragEnd1Pane send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection-and-cancel
+
 # Pane resize
 bind-key -n S-Left  resize-pane -L 5
 bind-key -n S-Right resize-pane -R 5
