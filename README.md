@@ -117,6 +117,7 @@ aon attach project
 | Key | Action |
 |---|---|
 | `F4` | 🟡 Zoom / unzoom current pane |
+| `Alt + Z` | 🟡 Universal zoom / unzoom fallback |
 | `F5` | 🟢 New window |
 | `F6` | 🟢 Detach and keep everything running |
 | `F7` | 🔵 Previous window |
@@ -334,6 +335,25 @@ Split left / right with `F9`:
 Zoom the active side with `F4`.
 
 Press `F4` again to restore the split.
+
+### F4 does not work
+
+Some laptops or terminal applications intercept the F4 key before it reaches SSH/tmux.
+
+Use the universal AON shortcut instead:
+
+```text
+Alt + Z
+```
+
+Or use the standard tmux fallback:
+
+```text
+Ctrl+b
+z
+```
+
+If `Ctrl+b` then `z` works but `F4` does not, AON is working correctly and the local computer or terminal is intercepting F4.
 
 ---
 
