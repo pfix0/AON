@@ -73,7 +73,7 @@ notify() {
   [ "$#" -gt 0 ] || die "Usage: aon-notify send <message>"
 
   local session="none"
-  if [ -n "$TMUX" ]; then
+  if [ -n "${TMUX:-}" ]; then
     session="$(tmux display-message -p '#S' 2>/dev/null || echo none)"
   fi
 
@@ -92,7 +92,7 @@ run_and_notify() {
   start="$(date +%s)"
   session="none"
 
-  if [ -n "$TMUX" ]; then
+  if [ -n "${TMUX:-}" ]; then
     session="$(tmux display-message -p '#S' 2>/dev/null || echo none)"
   fi
 
@@ -171,7 +171,7 @@ Note:
 HELP
 }
 
-case "$1" in
+case "${1:-}" in
   setup) setup_telegram ;;
   test) send_message "AON test notification from $(hostname)."; ok "Test message sent." ;;
   status) status ;;
