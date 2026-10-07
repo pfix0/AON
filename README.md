@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="assets/410c765d-c1b3-46f7-b653-a129444db264.png" alt="AON Assistant" width="350">
+  <img src="assets/410c765d-c1b3-46f7-b653-a129444db264.png" alt="AON Assistant" width="200">
 
   <h1>AON</h1>
 
