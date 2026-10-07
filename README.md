@@ -21,6 +21,12 @@
   </p>
 
   <p>
+    <img src="https://img.shields.io/badge/CORE-READY-00C853?style=flat-square" alt="Core Ready">
+    <img src="https://img.shields.io/badge/AI-OPTIONAL-7E57C2?style=flat-square" alt="AI Optional">
+    <img src="https://img.shields.io/badge/TELEGRAM-OPTIONAL-229ED9?style=flat-square" alt="Telegram Optional">
+  </p>
+
+  <p>
     <a href="#quick-start"><strong>Quick Start</strong></a>
     ·
     <a href="#shortcuts"><strong>Shortcuts</strong></a>
@@ -34,7 +40,7 @@
 
 ---
 
-## AON in 20 seconds
+## ⚡ AON in 20 seconds
 
 AON is a simple wrapper around `tmux`.
 
@@ -49,11 +55,12 @@ It lets you:
 - install optional AI and server tools
 - send completion notifications to Telegram
 
-> **Main idea:** start work once, leave it running, and come back later.
+> [!TIP]
+> Start work once, detach with `F6`, and return later without stopping the session.
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 ### 1. Install
 
@@ -92,6 +99,9 @@ Press:
 F6
 ```
 
+> [!IMPORTANT]
+> `F6` detaches from AON. It does **not** stop Claude Code, Codex, servers, scripts, builds, or other processes running inside the session.
+
 ### 5. Return later
 
 ```bash
@@ -100,24 +110,29 @@ aon attach project
 
 ---
 
-## Shortcuts
+## ⌨️ Shortcuts
+
+**Legend:** 🟢 Core · 🔵 Navigation · 🟡 Layout · 🔴 Close
 
 | Key | Action |
 |---|---|
-| `F4` | Zoom / unzoom current pane |
-| `F5` | New window |
-| `F6` | Detach and keep everything running |
-| `F7` | Previous window |
-| `F8` | Next window |
-| `F9` | Split left / right |
-| `F10` | Split top / bottom |
-| `F11` | Close pane |
-| `F12` | Close window |
+| `F4` | 🟡 Zoom / unzoom current pane |
+| `F5` | 🟢 New window |
+| `F6` | 🟢 Detach and keep everything running |
+| `F7` | 🔵 Previous window |
+| `F8` | 🔵 Next window |
+| `F9` | 🟡 Split left / right |
+| `F10` | 🟡 Split top / bottom |
+| `F11` | 🔴 Close pane |
+| `F12` | 🔴 Close window |
 | `Alt + 1..9` | Jump to a window |
 | `Alt + Arrow` | Move between panes |
 | `Shift + Arrow` | Resize pane |
 
-### Mouse
+### 🖱️ Mouse
+
+> [!NOTE]
+> Mouse support is enabled automatically by AON.
 
 - click a pane to focus it
 - click a window in the bottom bar to switch to it
@@ -126,7 +141,7 @@ aon attach project
 
 ---
 
-## Core Commands
+## 🧩 Core Commands
 
 | Command | Purpose |
 |---|---|
@@ -149,7 +164,7 @@ aon attach <TAB>
 
 ---
 
-## Built-in Help
+## 🆘 Built-in Help
 
 Inside an AON session:
 
@@ -172,11 +187,10 @@ Outside AON, your normal shell help stays unchanged.
 
 ---
 
-## Optional Tools
+## 🧰 Optional Tools
 
-AON core installs first.
-
-Everything below is optional.
+> [!NOTE]
+> AON core installs first. Everything in this section is optional.
 
 The installer can then show a second setup menu:
 
@@ -213,9 +227,10 @@ bash scripts/bootstrap.sh
 
 ---
 
-## Telegram
+## 📬 Telegram
 
-Telegram support is optional.
+> [!TIP]
+> Telegram notifications are optional and can wrap any command, not only AI tools.
 
 Configure it:
 
@@ -259,7 +274,7 @@ Telegram config is stored locally in:
 
 ---
 
-## Supported Systems
+## 🖥️ Supported Systems
 
 ### AON host
 
@@ -289,7 +304,10 @@ You can connect from:
 
 ### Function keys
 
-On laptops, you may need:
+> [!NOTE]
+> On laptops, the operating system may require the `Fn` key to send F-keys.
+
+You may need:
 
 ```text
 Fn + F4
@@ -301,7 +319,7 @@ Fn + F12
 
 ---
 
-## Example Layout
+## 🪟 Example Layout
 
 Split left / right with `F9`:
 
@@ -320,7 +338,7 @@ Press `F4` again to restore the split.
 ---
 
 <details>
-<summary><strong>Advanced commands</strong></summary>
+<summary><strong>⚙️ Advanced commands</strong></summary>
 
 ### Standard tmux fallbacks
 
@@ -361,7 +379,7 @@ Remove AON-managed sections from:
 ---
 
 <details>
-<summary><strong>Project structure</strong></summary>
+<summary><strong>📁 Project structure</strong></summary>
 
 ```text
 AON/
@@ -377,23 +395,20 @@ AON/
 ---
 
 <details>
-<summary><strong>Security notes</strong></summary>
+<summary><strong>🔐 Security notes</strong></summary>
+
+> [!CAUTION]
+> Do not store secrets in session names, shell history, or command-line arguments.
 
 AON does not open a network port or replace SSH authentication.
 
 AON sessions run with the permissions of the user who starts them.
 
-Avoid putting secrets in:
-
-- session names
-- shell history
-- command-line arguments
-
 </details>
 
 ---
 
-## Author
+## 👤 Author
 
 Created by **pfix0**
 
@@ -402,5 +417,7 @@ Version **1.0.0**
 Built on [tmux](https://github.com/tmux/tmux).
 
 <div align="center">
-  <strong>AON — leave the terminal, not the work.</strong>
+
+  <img src="https://img.shields.io/badge/AON-leave%20the%20terminal%2C%20not%20the%20work-00C853?style=for-the-badge" alt="AON">
+
 </div>
