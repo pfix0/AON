@@ -277,6 +277,7 @@ AON Keyboard
 ============
 
 F4    Zoom / unzoom current pane
+Alt+Z Universal zoom / unzoom fallback
 F5    New window
 F6    Background / Detach
 F7    Previous window
@@ -327,6 +328,7 @@ Sessions:
 
 Keyboard:
   F4    Zoom / unzoom
+  Alt+Z Universal zoom / unzoom fallback
   F5    New window
   F6    Background / Detach
   F7    Previous window
@@ -464,6 +466,14 @@ Inside AON:
 
 Outside AON, normal shell help remains unchanged.
 
+If F4 is intercepted by your local operating system or terminal:
+  Alt+Z
+      Zoom / unzoom current pane directly.
+
+Standard tmux fallback:
+  Ctrl+b then z
+      Zoom / unzoom current pane.
+
 HELP
 keys_text
 }
@@ -525,6 +535,7 @@ set -g set-clipboard on
 
 # AON shortcuts
 bind-key -n F4 resize-pane -Z
+bind-key -n M-z resize-pane -Z
 bind-key -n F5 new-window -c "#{pane_current_path}"
 bind-key -n F6 detach-client
 bind-key -n F7 previous-window
@@ -596,6 +607,7 @@ if command -v byobu >/dev/null 2>&1; then
 
 # >>> AON BYOBU >>>
 bind-key -n F4 resize-pane -Z
+bind-key -n M-z resize-pane -Z
 bind-key -n F5 new-window -c "#{pane_current_path}"
 bind-key -n F6 detach-client
 bind-key -n F7 previous-window
@@ -856,6 +868,7 @@ Inside AON:
 
 Keyboard:
   F4   Zoom / unzoom current pane
+  Alt+Z Universal zoom / unzoom fallback
   F5   New window
   F6   Background / Detach
   F7   Previous window
