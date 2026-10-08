@@ -40,6 +40,19 @@
 
 ---
 
+## 🎬 Demo
+
+<div align="center">
+  <a href="https://github.com/pfix0/AON/blob/main/assets/AON-demo.mp4">
+    <img src="assets/Aon%20logo.png" alt="Watch the AON terminal demo" width="300">
+  </a>
+
+  <p><strong><a href="https://github.com/pfix0/AON/blob/main/assets/AON-demo.mp4">▶ Watch AON in action</a></strong></p>
+  <p>See AON's terminal workflow in the demo video.</p>
+</div>
+
+---
+
 ## ⚡ ${\\color{green}AON\\ in\\ 20\\ seconds}$
 
 AON is a simple wrapper around `tmux`.
