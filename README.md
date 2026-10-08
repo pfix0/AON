@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="assets/AON-demo.gif" alt="AON terminal demonstration" width="800">
+  <img src="assets/Aon%20logo.png" alt="AON" width="180">
 
   <h1>AON</h1>
 
@@ -41,6 +41,10 @@
 ---
 
 ## ⚡ ${\\color{green}AON\\ in\\ 20\\ seconds}$
+
+<div align="center">
+  <img src="assets/AON-demo.gif" alt="AON terminal demonstration" width="440">
+</div>
 
 AON is a simple wrapper around `tmux`.
 
