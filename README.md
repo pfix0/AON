@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="assets/Aon%20logo.png" alt="AON" width="180">
+  <img src="assets/AON-demo.gif" alt="AON terminal demonstration" width="800">
 
   <h1>AON</h1>
 
