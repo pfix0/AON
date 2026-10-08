@@ -2,7 +2,11 @@
 
 <div align="center">
 
-  <img src="assets/Aon logo.png" alt="AON" width="180">
+  <a href="https://github.com/pfix0/AON/blob/main/assets/AON-demo.mp4">
+    <img src="assets/Aon%20logo.png" alt="Play AON demo video" width="220">
+  </a>
+
+  <p><strong><a href="https://github.com/pfix0/AON/blob/main/assets/AON-demo.mp4">▶ PLAY DEMO VIDEO</a></strong></p>
 
   <h1>AON</h1>
 
@@ -36,19 +40,6 @@
     <a href="#telegram"><strong>Telegram</strong></a>
   </p>
 
-</div>
-
----
-
-## 🎬 Demo
-
-<div align="center">
-  <a href="https://github.com/pfix0/AON/blob/main/assets/AON-demo.mp4">
-    <img src="assets/Aon%20logo.png" alt="Watch the AON terminal demo" width="300">
-  </a>
-
-  <p><strong><a href="https://github.com/pfix0/AON/blob/main/assets/AON-demo.mp4">▶ Watch AON in action</a></strong></p>
-  <p>See AON's terminal workflow in the demo video.</p>
 </div>
 
 ---
