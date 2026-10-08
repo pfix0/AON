@@ -2,11 +2,7 @@
 
 <div align="center">
 
-  <a href="https://www.youtube.com/watch?v=tDSb0-9_xcA">
-    <img src="https://img.youtube.com/vi/tDSb0-9_xcA/hqdefault.jpg" alt="Watch the AON demo on YouTube" width="640">
-  </a>
-
-  <p><strong><a href="https://www.youtube.com/watch?v=tDSb0-9_xcA">▶ WATCH AON DEMO</a></strong></p>
+  <img src="assets/Aon%20logo.png" alt="AON" width="180">
 
   <h1>AON</h1>
 
